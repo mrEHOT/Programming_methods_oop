@@ -43,6 +43,7 @@ namespace simple_matrix
 		switch (style)
 		{
 		case 0:
+			ofst << "Matrix output style - \"Line by line\" " << endl;
 			for (int row = 0; row < sideSize; row++)
 			{
 				for (int col = 0; col < sideSize; col++)
@@ -53,6 +54,7 @@ namespace simple_matrix
 			}
 			break;
 		case 1:
+			ofst << "Matrix output style - \"Output by columns\" " << endl;
 			for (int col = 0; col < sideSize; col++)
 			{
 				for (int row = 0; row < sideSize; row++)
@@ -63,6 +65,7 @@ namespace simple_matrix
 			}
 			break;
 		case 2:
+			ofst << "Matrix output style - \"Output to a one-dimensional array\" " << endl;
 			ofst << "[ ";
 			for (int row = 0; row < sideSize; row++)
 			{
