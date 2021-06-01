@@ -36,9 +36,12 @@ int main(int argc, char* argv[])
 		cout << "Filled container. " << endl;
 		cont.Output(ofst); // Вывод заполненного контейнера
 
-		cont.Clear(); //Очистка контейнера
-		cout << "Empty container. " << endl;
-		cont.Output(ofst); // Вывод пустого контейнера
+	cout << "Output of square matrix." << endl;
+	cont.FilteredOutput(ofst); // Процедура, реализующая выборочный вывод информации (только о первом виде объетов - стандартные квадратные матрицы)
+
+	cont.Clear(); //Очистка контейнера
+	cout << "Empty container. " << endl;
+	cont.Output(ofst); // Вывод пустого контейнера
 
 		cout << "Stop" << endl;
 

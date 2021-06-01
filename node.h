@@ -21,6 +21,7 @@ namespace simple_matrix
 		static void NodeCompare(node* head, int size);
 		bool NodeAdd(ifstream& ifst);
 		void NodeOutput(ofstream& ofst);
+		void FilteredNodeOutput(ofstream& ofst);
 		void NodeRemove();
 		~node() {};
 	};

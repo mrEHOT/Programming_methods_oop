@@ -14,6 +14,7 @@ namespace simple_matrix
 	public:
 		int MtxSum();
 		bool Input(ifstream& ifst);
+		void FilteredMtxOut(ofstream& ofst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
 		squareMtx(int style);

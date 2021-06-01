@@ -82,6 +82,12 @@ namespace simple_matrix
 		ofst << endl;
 	}
 
+	void squareMtx::FilteredMtxOut(ofstream& ofst)
+	{
+
+		Output(ofst);
+	}
+
 	void squareMtx::ClearMtx()
 	{
 		for (int row = 0; row < sideSize; row++)

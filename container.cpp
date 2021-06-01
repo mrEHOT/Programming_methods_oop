@@ -52,6 +52,22 @@ namespace simple_matrix
 		}
 	}
 
+	void container::FilteredOutput(ofstream& ofst)
+	{
+		node* currNode;
+
+		ofst << "Filtered Output - Square matrix:" << endl << endl;
+		for (int i = 0; i < size; i++)
+		{
+			currNode = head;
+			for (int j = 0; j < i; j++)
+			{
+				currNode = currNode->next;
+			}
+			currNode->FilteredNodeOutput(ofst);
+		}
+	}
+
 	void container::Clear()
 	{
 		if (head != NULL)

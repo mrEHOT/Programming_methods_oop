@@ -15,6 +15,7 @@ namespace simple_matrix
 	public:
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
+		void FilteredOutput(ofstream& ofst);
 		void Clear();
 		void Sort();
 
