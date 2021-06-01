@@ -15,6 +15,7 @@ namespace simple_matrix
 		void Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
+		diagonalMtx(int style);
 		~diagonalMtx() {};
 	};
 } // end namespace simple_matrix

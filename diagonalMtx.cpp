@@ -28,27 +28,80 @@ namespace simple_matrix
 	void diagonalMtx::Output(ofstream& ofst)
 	{
 		ofst << "It is Diagonal matrix. Matrix side size: " << sideSize << endl;
-		for (int row = 0; row < sideSize; row++)
+
+		switch (style)
 		{
+		case 0:
+			for (int row = 0; row < sideSize; row++)
+			{
+				for (int col = 0; col < sideSize; col++)
+				{
+					if (row != col)
+					{
+						ofst << "0" << "\t";
+					}
+					else
+					{
+						ofst << currentMtx[row] << "\t";
+					}
+				}
+				ofst << endl;
+			}
+			break;
+		case 1:
+			for (int row = 0; row < sideSize; row++)
+			{
+				for (int col = 0; col < sideSize; col++)
+				{
+					if (row != col)
+					{
+						ofst << "0" << "\t";
+					}
+					else
+					{
+						ofst << currentMtx[row] << "\t";
+					}
+				}
+				ofst << endl;
+			}
+			break;
+		case 2:
+			ofst << "[ ";
 			for (int col = 0; col < sideSize; col++)
 			{
-				if (row != col)
-				{
-					ofst << "0" << "\t";
-				}
-				else
-				{
-					ofst << currentMtx[row] << "\t";
-				}
+				ofst << currentMtx[col] << " ";
 			}
-			ofst << endl;
+			ofst << "]" << endl;
+			break;
+		default:
+			break;
 		}
-
 		ofst << endl;
 	}
 
 	void diagonalMtx::ClearMtx()
 	{
 		delete[] currentMtx;
+	}
+
+	diagonalMtx::diagonalMtx(int style)
+	{
+		sideSize = 0;
+		currentMtx = NULL;
+
+		switch (style)
+		{
+		case 0:
+			this->style = LINEBYLINE;
+			break;
+		case 1:
+			this->style = BYCOLUMNS;
+			break;
+		case 2:
+			this->style = ONEDIMENARR;
+			break;
+		default:
+			break;
+		}
 	}
 } // end namespace simple_matrix

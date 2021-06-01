@@ -37,15 +37,43 @@ namespace simple_matrix
 	void squareMtx::Output(ofstream& ofst)
 	{
 		ofst << "It is Square matrix. Matrix side size: " << sideSize << endl;
-		for (int row = 0; row < sideSize; row++)
+
+		switch (style)
 		{
+		case 0:
+			for (int row = 0; row < sideSize; row++)
+			{
+				for (int col = 0; col < sideSize; col++)
+				{
+					ofst << currentMtx[row][col] << "\t";
+				}
+				ofst << endl;
+			}
+			break;
+		case 1:
 			for (int col = 0; col < sideSize; col++)
 			{
-				ofst << currentMtx[row][col] << "\t";
+				for (int row = 0; row < sideSize; row++)
+				{
+					ofst << currentMtx[row][col] << "\t";
+				}
+				ofst << endl;
 			}
-			ofst << endl;
+			break;
+		case 2:
+			ofst << "[ ";
+			for (int row = 0; row < sideSize; row++)
+			{
+				for (int col = 0; col < sideSize; col++)
+				{
+					ofst << currentMtx[row][col] << " ";
+				}
+			}
+			ofst << "]" << endl;
+			break;
+		default:
+			break;
 		}
-
 		ofst << endl;
 	}
 
@@ -57,5 +85,26 @@ namespace simple_matrix
 		}
 
 		delete[] currentMtx;
+	}
+
+	squareMtx::squareMtx(int style)
+	{
+		sideSize = 0;
+		currentMtx = NULL;
+
+		switch (style)
+		{
+		case 0:
+			this->style = LINEBYLINE;
+			break;
+		case 1:
+			this->style = BYCOLUMNS;
+			break;
+		case 2:
+			this->style = ONEDIMENARR;
+			break;
+		default:
+			break;
+		}
 	}
 } // end namespace simple_matrix
