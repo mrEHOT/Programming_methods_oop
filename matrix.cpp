@@ -8,19 +8,21 @@ namespace simple_matrix
 	{
 
 		matrix* newMtx;
-		int key;
+		int key = -1;
+		int style = -1;
 		ifst >> key;
+		ifst >> style;
 
 		switch (key)
 		{
 		case 0:
-			newMtx = new squareMtx;
+			newMtx = new  squareMtx(style);
 			break;
 		case 1:
-			newMtx = new diagonalMtx;
+			newMtx = new diagonalMtx(style);
 			break;
 		case 2:
-			newMtx = new triangularMtx;
+			newMtx = new triangularMtx(style);
 			break;
 		default:
 			return 0;

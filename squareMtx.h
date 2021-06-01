@@ -15,6 +15,7 @@ namespace simple_matrix
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
+		squareMtx(int style);
 		~squareMtx() {};
 	};
 } // end namespace simple_matrix

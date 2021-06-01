@@ -11,6 +11,8 @@ namespace simple_matrix
 	{
 	public:
 		long sideSize;
+		enum outputStyle { LINEBYLINE, BYCOLUMNS, ONEDIMENARR }; // Выбор способа вывода матрицы: 1)Построчно; 2)По столбцам; 3)В виде одномерного массива
+		outputStyle style;
 
 		virtual void ClearMtx() = 0;
 		static matrix* MtxInput(ifstream& ifst);
