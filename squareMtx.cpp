@@ -112,4 +112,24 @@ namespace simple_matrix
 			break;
 		}
 	}
+
+	int squareMtx::MtxSum()
+	{
+		if (!sumMarker)
+		{
+			for (int row = 0; row < sideSize; row++)
+			{
+				for (int col = 0; col < sideSize; col++)
+				{
+					sum += currentMtx[row][col];
+				}
+			}
+			sumMarker = true; // Устанавливаем маркер в TRUE (сумма элементов посчитана)
+			return sum;
+		} // Выполняется, если сумма элементов не была вычислена ранее
+		else
+		{
+			return sum;
+		} // Если сумма уже была посчитана => просто вернем ее
+	}
 } // end namespace simple_matrix

@@ -72,6 +72,11 @@ namespace simple_matrix
 		}
 	}
 
+	void container::Sort()
+	{
+		node::NodeCompare(head, size);
+	}
+
 	container::container()
 	{
 		size = 0;

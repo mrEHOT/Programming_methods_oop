@@ -32,6 +32,7 @@ int main(int argc, char* argv[])
 
 	if (cont.Input(ifst))
 	{
+		cont.Sort();
 		cout << "Filled container. " << endl;
 		cont.Output(ofst); // Вывод заполненного контейнера
 

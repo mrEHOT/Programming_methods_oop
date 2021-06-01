@@ -38,4 +38,16 @@ namespace simple_matrix
 		}
 
 	}
+
+	bool matrix::MtxCompare(matrix* first, matrix* second)
+	{
+		if (first->MtxSum() > second->MtxSum())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }  // end namespace simple_matrix

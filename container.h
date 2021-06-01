@@ -16,6 +16,7 @@ namespace simple_matrix
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void Clear();
+		void Sort();
 
 		container();
 		~container() { Clear(); };
