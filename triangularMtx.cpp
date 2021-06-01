@@ -49,7 +49,7 @@ namespace simple_matrix
 	{
 		int count = 0;
 
-		ofst << "It is Triangular matrix. Matrix side size: " << sideSize << endl;
+		ofst << "It is Triangular matrix. Matrix side size: " << sideSize << ". The sum of the elements of the matrix: " << sum << endl;
 
 		switch (style)
 		{
@@ -115,6 +115,7 @@ namespace simple_matrix
 	triangularMtx::triangularMtx(int style)
 	{
 		sideSize = 0;
+		currentMtxSize = 0;
 		currentMtx = NULL;
 
 		switch (style)
@@ -131,5 +132,22 @@ namespace simple_matrix
 		default:
 			break;
 		}
+	}
+
+	int triangularMtx::MtxSum()
+	{
+		if (!sumMarker)
+		{
+			for (int row = 0; row < currentMtxSize; row++)
+			{
+				sum += currentMtx[row];
+			}
+			sumMarker = true; // Устанавливаем маркер в TRUE (сумма элементов посчитана)
+			return sum;
+		} // Выполняется, если сумма элементов не была вычислена ранее
+		else
+		{
+			return sum;
+		} // Если сумма уже была посчитана => просто вернем ее
 	}
 } // end namespace simple_matrix

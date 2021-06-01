@@ -28,10 +28,10 @@ namespace simple_matrix
 
 	void node::NodeSwap(node* head, int first, int second)
 	{
-		node* temp = new node; // ќпредел¤ем временный указатель на Node
-		temp->mtx = GetNode(head, first)->mtx; // ”станавливаем указатель на матрицу первого узал
-		GetNode(head, first)->mtx = GetNode(head, second)->mtx; // ”казтель на матрицу первого узла указывает на матрицу второго
-		GetNode(head, second)->mtx = temp->mtx; // ”казтель на матрицу второго узла указывает на матрицу первого
+		node* temp = new node;
+		temp->mtx = GetNode(head, first)->mtx;
+		GetNode(head, first)->mtx = GetNode(head, second)->mtx;
+		GetNode(head, second)->mtx = temp->mtx;
 	}
 
 	bool node::NodeAdd(ifstream& ifst)
