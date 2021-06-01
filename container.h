@@ -13,7 +13,7 @@ namespace simple_matrix
 		long size;
 		node* head;
 	public:
-		void Input(ifstream& ifst);
+		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void Clear();
 

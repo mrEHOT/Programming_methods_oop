@@ -6,8 +6,6 @@ using namespace simple_matrix;
 
 int main(int argc, char* argv[])
 {
-
-
 	if (argc != 3)
 	{
 		cout << "incorrect command line!" << endl;
@@ -32,15 +30,23 @@ int main(int argc, char* argv[])
 
 	container cont;
 
-	cont.Input(ifst); // Заполняем контейнер данными из потока
-	cout << "Filled container. " << endl;
-	cont.Output(ofst); // Вывод заполненного контейнера
+	if (cont.Input(ifst))
+	{
+		cout << "Filled container. " << endl;
+		cont.Output(ofst); // Вывод заполненного контейнера
 
-	cont.Clear(); //Очистка контейнера
-	cout << "Empty container. " << endl;
-	cont.Output(ofst); // Вывод пустого контейнера
+		cont.Clear(); //Очистка контейнера
+		cout << "Empty container. " << endl;
+		cont.Output(ofst); // Вывод пустого контейнера
 
-	cout << "Stop" << endl;
+		cout << "Stop" << endl;
 
-	return 0;
+		return 0;
+	} // Если заполнение контейнера выполнено корректно, то программа выполняется до конца
+	else
+	{
+		cont.Clear(); //Очистка контейнера
+		cout << "Input data error! Container filling stopped!" << endl;
+		return 1;
+	} // Экстренное завершение программы, ошибка при заполнении контейнера
 }

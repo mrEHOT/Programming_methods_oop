@@ -1,7 +1,7 @@
 #include "squareMtx.h"
 namespace simple_matrix
 {
-	void squareMtx::Input(ifstream& ifst)
+	bool squareMtx::Input(ifstream& ifst)
 	{
 		string content = "";
 		string delimiter = ",";
@@ -32,6 +32,8 @@ namespace simple_matrix
 			content = "";
 			col = 0;
 		}
+
+		return true;
 	}
 
 	void squareMtx::Output(ofstream& ofst)

@@ -1,7 +1,7 @@
 #include "diagonalMtx.h"
 namespace simple_matrix
 {
-	void diagonalMtx::Input(ifstream& ifst)
+	bool diagonalMtx::Input(ifstream& ifst)
 	{
 		string content = "";
 		string delimiter = ",";
@@ -23,6 +23,8 @@ namespace simple_matrix
 		}
 
 		currentMtx[col] = atoi(content.c_str());
+
+		return true;
 	}
 
 	void diagonalMtx::Output(ofstream& ofst)

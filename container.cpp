@@ -1,7 +1,7 @@
 #include "container.h"
 namespace simple_matrix
 {
-	void container::Input(ifstream& ifst)
+	bool container::Input(ifstream& ifst)
 	{
 		node* tmpNode = new node;
 
@@ -25,6 +25,15 @@ namespace simple_matrix
 			tmpNode = new node;
 		}
 		delete tmpNode;
+
+		if (ifst.eof())
+		{
+			return true;
+		} // ≈сли поток закончилс€ => все матрицы считаны => возвращаем TRUE
+		else
+		{
+			return false;
+		} // ≈сли поток не закончилс€, а ранее в while получили false => ввод какой-то матрицы не выполнен
 	}
 
 	void container::Output(ofstream& ofst)

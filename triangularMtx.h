@@ -1,6 +1,6 @@
 #pragma once
-#ifndef diagonalMtx_definition
-#define diagonalMtx_definition
+#ifndef triangularMtx_definition
+#define triangularMtx_definition
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -8,14 +8,14 @@
 using namespace std;
 namespace simple_matrix
 {
-	class diagonalMtx : public matrix
+	class triangularMtx :public matrix
 	{
 		int* currentMtx;
 	public:
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
-		~diagonalMtx() {};
+		~triangularMtx() {};
 	};
 } // end namespace simple_matrix
-#endif // !diagonalMtx_definition
+#endif // !triangularMtx_definition
