@@ -20,6 +20,11 @@ namespace simple_matrix
 		mtx->Output(ofst);
 	}
 
+	void node::FilteredNodeOutput(ofstream& ofst)
+	{
+		mtx->FilteredMtxOut(ofst);
+	}
+
 	void node::NodeRemove()
 	{
 		mtx->ClearMtx();

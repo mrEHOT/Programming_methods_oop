@@ -17,6 +17,7 @@ namespace simple_matrix
 
 		bool NodeAdd(ifstream& ifst);
 		void NodeOutput(ofstream& ofst);
+		void FilteredNodeOutput(ofstream& ofst);
 		void NodeRemove();
 		~node() {};
 	};

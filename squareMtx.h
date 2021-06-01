@@ -12,7 +12,9 @@ namespace simple_matrix
 	{
 		int** currentMtx;
 	public:
+
 		void Input(ifstream& ifst);
+		void FilteredMtxOut(ofstream& ofst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
 		~squareMtx() {};
