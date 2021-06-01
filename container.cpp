@@ -55,8 +55,9 @@ namespace simple_matrix
 	void container::FilteredOutput(ofstream& ofst)
 	{
 		node* currNode;
-
-		ofst << "Filtered Output - Square matrix:" << endl << endl;
+		ofst << "---------------------------------" << endl;
+		ofst << "Filtered Output - Square matrix:" << endl;
+		ofst << "---------------------------------" << endl << endl;
 		for (int i = 0; i < size; i++)
 		{
 			currNode = head;
