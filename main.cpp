@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
 	container cont;
 
 	cont.Input(ifst); // Заполняем контейнер данными из потока
+	cont.Sort(); //Сортируем контейнер по возрастнию суммы элементов матрицы
 	cout << "Filled container. " << endl;
 	cont.Output(ofst); // Вывод заполненного контейнера
 

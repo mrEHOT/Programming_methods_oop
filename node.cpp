@@ -1,6 +1,39 @@
 #include "node.h"
 namespace simple_matrix
 {
+	void node::NodeCompare(node* head, int size)
+	{
+		for (int i = 0; i < size - 1; i++)
+		{
+			for (int j = i + 1; j < size; j++)
+			{
+				if (matrix::MtxCompare(GetNode(head, i)->mtx, GetNode(head, j)->mtx))
+				{
+					NodeSwap(head, i, j);
+				}
+			}
+		}
+	}
+
+	node* node::GetNode(node* head, int pos)
+	{
+		node* retNode = head;
+
+		for (int i = 0; i < pos; i++)
+		{
+			retNode = retNode->next;
+		}
+		return retNode;
+	}
+
+	void node::NodeSwap(node* head, int first, int second)
+	{
+		node* temp = new node; // ќпредел¤ем временный указатель на Node
+		temp->mtx = GetNode(head, first)->mtx; // ”станавливаем указатель на матрицу первого узал
+		GetNode(head, first)->mtx = GetNode(head, second)->mtx; // ”казтель на матрицу первого узла указывает на матрицу второго
+		GetNode(head, second)->mtx = temp->mtx; // ”казтель на матрицу второго узла указывает на матрицу первого
+	}
+
 	bool node::NodeAdd(ifstream& ifst)
 	{
 		mtx = matrix::MtxInput(ifst);

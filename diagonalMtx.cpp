@@ -27,7 +27,7 @@ namespace simple_matrix
 
 	void diagonalMtx::Output(ofstream& ofst)
 	{
-		ofst << "It is Diagonal matrix. Matrix side size: " << sideSize << endl;
+		ofst << "It is Diagonal matrix. Matrix side size: " << sideSize << ". Sum of matrix elements: " << sum << endl;
 		for (int row = 0; row < sideSize; row++)
 		{
 			for (int col = 0; col < sideSize; col++)

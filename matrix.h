@@ -14,6 +14,7 @@ namespace simple_matrix
 		int sum = 0;
 		bool sumMarker = false;
 
+		static bool MtxCompare(matrix* first, matrix* second);
 		static matrix* MtxInput(ifstream& ifst);
 		~matrix() {};
 

@@ -36,7 +36,7 @@ namespace simple_matrix
 
 	void squareMtx::Output(ofstream& ofst)
 	{
-		ofst << "It is Square matrix. Matrix side size: " << sideSize << endl;
+		ofst << "It is Square matrix. Matrix side size: " << sideSize << ". Sum of matrix elements: " << sum << endl;
 		for (int row = 0; row < sideSize; row++)
 		{
 			for (int col = 0; col < sideSize; col++)
