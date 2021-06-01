@@ -12,6 +12,7 @@ namespace simple_matrix
 	{
 		int* currentMtx;
 	public:
+		int MtxSum();
 		void Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void ClearMtx();

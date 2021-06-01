@@ -51,4 +51,21 @@ namespace simple_matrix
 	{
 		delete[] currentMtx;
 	}
+
+	int diagonalMtx::MtxSum()
+	{
+		if (!sumMarker)
+		{
+			for (int row = 0; row < sideSize; row++)
+			{
+				sum += currentMtx[row];
+			}
+			sumMarker = true; // Устанавливаем маркер в TRUE (сумма элементов посчитана)
+			return sum;
+		} // Выполняется, если сумма элементов не была вычислена ранее
+		else
+		{
+			return sum;
+		} // Если сумма уже была посчитана => просто вернем ее
+	}
 } // end namespace simple_matrix

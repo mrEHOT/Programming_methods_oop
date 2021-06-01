@@ -11,12 +11,17 @@ namespace simple_matrix
 	{
 	public:
 		long sideSize;
+		int sum = 0;
+		bool sumMarker = false;
+
+		static matrix* MtxInput(ifstream& ifst);
+		~matrix() {};
 
 		virtual void ClearMtx() = 0;
-		static matrix* MtxInput(ifstream& ifst);
 		virtual void Input(ifstream& ifst) = 0;
 		virtual void Output(ofstream& ofst) = 0;
-		~matrix() {};
+		virtual int MtxSum() = 0;
+
 	};
 } // end namespace simple_matrix
 #endif // !matrix_definition
