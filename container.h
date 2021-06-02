@@ -10,9 +10,9 @@ namespace simple_matrix
 {
 	class container
 	{
+	public:
 		long size;
 		node* head;
-	public:
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void FilteredOutput(ofstream& ofst);

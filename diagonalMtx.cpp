@@ -23,7 +23,7 @@ namespace simple_matrix
 		}
 
 		currentMtx[col] = atoi(content.c_str());
-
+		MtxSum();
 		return true;
 	}
 
@@ -76,7 +76,7 @@ namespace simple_matrix
 			{
 				ofst << currentMtx[col] << " ";
 			}
-			ofst << "]" << endl << endl;
+			ofst << "]" << endl;
 			break;
 		default:
 			break;
@@ -88,6 +88,11 @@ namespace simple_matrix
 	void diagonalMtx::ClearMtx()
 	{
 		delete[] currentMtx;
+	}
+
+	diagonalMtx::diagonalMtx()
+	{
+		currentMtx = NULL;
 	}
 
 	diagonalMtx::diagonalMtx(int style)

@@ -33,6 +33,7 @@ namespace simple_matrix
 			col = 0;
 		}
 
+		MtxSum();
 		return true;
 	}
 
@@ -96,6 +97,12 @@ namespace simple_matrix
 		}
 
 		delete[] currentMtx;
+	}
+
+	squareMtx::squareMtx() 
+	{
+		sideSize = 0;
+		currentMtx = NULL;
 	}
 
 	squareMtx::squareMtx(int style)

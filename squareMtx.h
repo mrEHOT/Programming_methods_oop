@@ -10,13 +10,15 @@ namespace simple_matrix
 {
 	class squareMtx :public matrix
 	{
-		int** currentMtx;
 	public:
+		int** currentMtx;
 		int MtxSum();
 		bool Input(ifstream& ifst);
 		void FilteredMtxOut(ofstream& ofst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
+
+		squareMtx();
 		squareMtx(int style);
 		~squareMtx() {};
 	};

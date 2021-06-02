@@ -10,12 +10,13 @@ namespace simple_matrix
 {
 	class diagonalMtx : public matrix
 	{
-		int* currentMtx;
 	public:
+		int* currentMtx;
 		int MtxSum();
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
+		diagonalMtx();
 		diagonalMtx(int style);
 		~diagonalMtx() {};
 	};

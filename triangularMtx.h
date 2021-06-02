@@ -10,13 +10,15 @@ namespace simple_matrix
 {
 	class triangularMtx :public matrix
 	{
+	public:
 		int* currentMtx;
 		int currentMtxSize;
-	public:
 		int MtxSum();
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void ClearMtx();
+
+		triangularMtx();
 		triangularMtx(int style);
 		~triangularMtx() {};
 	};

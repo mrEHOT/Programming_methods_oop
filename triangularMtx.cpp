@@ -37,6 +37,7 @@ namespace simple_matrix
 				content.erase(0, pos + delimiter.length());
 			}
 			currentMtx[col] = atoi(content.c_str());
+			MtxSum();
 			return true;
 		}
 		else
@@ -98,7 +99,7 @@ namespace simple_matrix
 			{
 				ofst << currentMtx[col] << " ";
 			}
-			ofst << "]" << endl << endl;
+			ofst << "]" << endl;
 			break;
 		default:
 			break;
@@ -110,6 +111,12 @@ namespace simple_matrix
 	void triangularMtx::ClearMtx()
 	{
 		delete[] currentMtx;
+	}
+
+	triangularMtx::triangularMtx()
+	{
+		currentMtx = NULL;
+		currentMtxSize = 0;
 	}
 
 	triangularMtx::triangularMtx(int style)
