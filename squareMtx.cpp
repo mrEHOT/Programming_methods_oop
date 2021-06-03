@@ -9,32 +9,84 @@ namespace simple_matrix
 		size_t pos = 0;
 		int col = 0;
 
-		ifst >> sideSize;
-		currentMtx = new int* [sideSize];
-		for (int row = 0; row < sideSize; row++)
+		ifst >> content;
+		for (int i = 0; i < content.size(); i++)
 		{
-			currentMtx[row] = new int[sideSize];
+			if (content[i] == ',')
+			{
+				col++;
+			}
+		}
+		if (col != 0)
+		{
+			cout << "Input Error!  Side size must be one digit!" << endl;
+			return false;
+		}
+		else
+		{
+			sideSize = atoi(content.c_str());
+			content = "";
+			col = 1;
 		}
 
-		for (int row = 0; row < sideSize; row++)
+		if ((sideSize <= 1) || (sideSize > 10))
 		{
-			ifst >> content;
-
-			while ((pos = content.find(delimiter)) != string::npos)
+			cout << "Incorrect Square matrix size!Re-enter the side size!Recommended size : 2 to 10." << endl;
+			return false;
+		}
+		else
+		{
+			currentMtx = new int* [sideSize];
+			for (int row = 0; row < sideSize; row++)
 			{
-				part = content.substr(0, pos);
-				currentMtx[row][col] = atoi(part.c_str());
-				col++;
-				content.erase(0, pos + delimiter.length());
+				currentMtx[row] = new int[sideSize];
 			}
 
-			currentMtx[row][col] = atoi(content.c_str());
-			content = "";
-			col = 0;
-		}
+			for (int row = 0; row < sideSize; row++)
+			{
+				ifst >> content;
+				for (int i = 0; i < content.size(); i++)
+				{
+					if (content[i] == ',')
+					{
+						col++;
+					}
+				}
 
-		MtxSum();
-		return true;
+				if (col == sideSize)
+				{
+					col = 0;
+
+					while ((pos = content.find(delimiter)) != string::npos)
+					{
+						part = content.substr(0, pos);
+						currentMtx[row][col] = atoi(part.c_str());
+						string str = to_string(currentMtx[row][col]);
+						if (part != str)
+						{
+							cout << "Cast error, number cannot be cast to int!" << endl;
+							ClearMtx();
+							return false;
+						}
+						col++;
+						content.erase(0, pos + delimiter.length());
+					}
+
+					currentMtx[row][col] = atoi(content.c_str());
+					content = "";
+					col = 1;
+				}
+				else
+				{
+					ClearMtx();
+					cout << "Input Error! The number of items does not match the side size that was received!" << endl;
+					return false;
+				}
+			}
+
+			MtxSum();
+			return true;
+		}
 	}
 
 	void squareMtx::Output(ofstream& ofst)
@@ -99,7 +151,7 @@ namespace simple_matrix
 		delete[] currentMtx;
 	}
 
-	squareMtx::squareMtx() 
+	squareMtx::squareMtx()
 	{
 		sideSize = 0;
 		currentMtx = NULL;

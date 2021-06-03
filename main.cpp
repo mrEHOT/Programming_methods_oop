@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <fstream>
 #include "container.h"
+#include <regex>
 using namespace std;
 using namespace simple_matrix;
 
@@ -13,17 +14,35 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
-	ifstream ifst(argv[1]);
-	if (!ifst.is_open())
+	ifstream ifstCheck(argv[1]);
+	if (!ifstCheck.is_open())
 	{
 		cout << "Input file is not open!" << endl;
 		return 1;
 	} // Проверка открытия файла Input
+	else
+	{
+		string content = "";
+		regex regular("^-?\\d+(,-?\\d+){0,}$");
+		while (!ifstCheck.eof())
+		{
+			string content = "";
+			getline(ifstCheck, content); // Считываем строку из исходного файла
+			if (!regex_match(content, regular))
+			{
+				cout << "Invalid input received! Please re-enter!" << endl;
+				return 1;
+			}
+		} // Если весь входной файл удовлетворяет условию регулярного выражения, то его можно использовать в качестве входного
+		ifstCheck.close();
+	}
+
+	ifstream ifst(argv[1]);
 
 	ofstream ofst(argv[2]);
 	if (!ofst.is_open())
 	{
-		cout << "Input file is not open!" << endl;
+		cout << "Output file is not open!" << endl;
 		return 1;
 	} // Проверка открытия файла Output
 	cout << "Start" << endl;
@@ -36,12 +55,12 @@ int main(int argc, char* argv[])
 		cout << "Filled container. " << endl;
 		cont.Output(ofst); // Вывод заполненного контейнера
 
-	cout << "Output of square matrix." << endl;
-	cont.FilteredOutput(ofst); // Процедура, реализующая выборочный вывод информации (только о первом виде объетов - стандартные квадратные матрицы)
+		cout << "Output of square matrix." << endl;
+		cont.FilteredOutput(ofst); // Процедура, реализующая выборочный вывод информации (только о первом виде объетов - стандартные квадратные матрицы)
 
-	cont.Clear(); //Очистка контейнера
-	cout << "Empty container. " << endl;
-	cont.Output(ofst); // Вывод пустого контейнера
+		cont.Clear(); //Очистка контейнера
+		cout << "Empty container. " << endl;
+		cont.Output(ofst); // Вывод пустого контейнера
 
 		cout << "Stop" << endl;
 

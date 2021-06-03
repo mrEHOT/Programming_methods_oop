@@ -9,22 +9,46 @@ namespace simple_matrix
 		size_t pos = 0;
 		int col = 0;
 
-
-		ifst >> sideSize >> content;
-		currentMtx = new int[sideSize];
-
-
-		while ((pos = content.find(delimiter)) != string::npos)
+		ifst >> content;
+		sideSize = 1;
+		for (int i = 0; i < content.size(); i++)
 		{
-			part = content.substr(0, pos);
-			currentMtx[col] = atoi(part.c_str());
-			col++;
-			content.erase(0, pos + delimiter.length());
+			if (content[i] == ',')
+			{
+				sideSize++;
+			}
 		}
 
-		currentMtx[col] = atoi(content.c_str());
-		MtxSum();
-		return true;
+		if ((sideSize <= 1) || (sideSize > 10))
+		{
+			cout << "Incorrect matrix size! Re-enter items! Recommended amount: 2 to 10." << endl;
+			return false;
+		}
+		else
+		{
+			currentMtx = new int[sideSize];
+
+			while ((pos = content.find(delimiter)) != string::npos)
+			{
+				part = content.substr(0, pos);
+				currentMtx[col] = atoi(part.c_str());
+
+				string str = to_string(currentMtx[col]);
+				if (part != str)
+				{
+					cout << "Cast error, number cannot be cast to int!" << endl;
+					ClearMtx();
+					return false;
+				}
+				col++;
+				content.erase(0, pos + delimiter.length());
+			}
+
+			currentMtx[col] = atoi(content.c_str());
+
+			MtxSum();
+			return true;
+		}
 	}
 
 	void diagonalMtx::Output(ofstream& ofst)

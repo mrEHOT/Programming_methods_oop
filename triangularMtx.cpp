@@ -8,42 +8,57 @@ namespace simple_matrix
 		string part = "";
 		size_t pos = 0;
 		int col = 0;
-		int count = 1;
 		int check = 0;
 
 		ifst >> content;
-
+		numberOfElements = 1;
 		for (int i = 0; i < content.size(); i++)
 		{
 			if (content[i] == ',')
 			{
-				count++;
+				numberOfElements++;
 			}
-		} // Считаем количество элементов в матрице
+		}
 
-		sideSize = (long)sqrt(count) + 1;
-
+		sideSize = (long)sqrt(numberOfElements) + 1;
 		check = (1 + sideSize) * sideSize / 2;
-		if (count == check)
-		{
-			currentMtx = new int[count];
-			currentMtxSize = count;
 
-			while ((pos = content.find(delimiter)) != string::npos)
+		if (numberOfElements == check)
+		{
+			if ((numberOfElements <= 1) || (numberOfElements > 55))
 			{
-				part = content.substr(0, pos);
-				currentMtx[col] = atoi(part.c_str());
-				col++;
-				content.erase(0, pos + delimiter.length());
+				cout << "Incorrect number of elements! Re-enter items! Recommended amount: 2 to 55." << endl;
+				return false;
 			}
-			currentMtx[col] = atoi(content.c_str());
-			MtxSum();
-			return true;
+			else
+			{
+				currentMtx = new int[numberOfElements];
+
+				while ((pos = content.find(delimiter)) != string::npos)
+				{
+					part = content.substr(0, pos);
+					currentMtx[col] = atoi(part.c_str());
+					string str = to_string(currentMtx[col]);
+					if (part != str)
+					{
+						cout << "Cast error, number cannot be cast to int!" << endl;
+						ClearMtx();
+						return false;
+					}
+					col++;
+					content.erase(0, pos + delimiter.length());
+				}
+				currentMtx[col] = atoi(content.c_str());
+
+				MtxSum();
+				return true;
+			}
 		}
 		else
 		{
+			cout << "Input Error! The entered elements are not enough to enter the lower triangular matrix!" << endl;
 			return false;
-		} // Если ввод матрицы выполнить нельзя => вернем FALSE
+		}
 	}
 
 	void triangularMtx::Output(ofstream& ofst)
@@ -95,7 +110,7 @@ namespace simple_matrix
 		case 2:
 			ofst << "Matrix output style - \"Output to a one-dimensional array\" " << endl;
 			ofst << "[ ";
-			for (int col = 0; col < currentMtxSize; col++)
+			for (int col = 0; col < numberOfElements; col++)
 			{
 				ofst << currentMtx[col] << " ";
 			}
@@ -116,13 +131,13 @@ namespace simple_matrix
 	triangularMtx::triangularMtx()
 	{
 		currentMtx = NULL;
-		currentMtxSize = 0;
+		numberOfElements = 0;
 	}
 
 	triangularMtx::triangularMtx(int style)
 	{
 		sideSize = 0;
-		currentMtxSize = 0;
+		numberOfElements = 0;
 		currentMtx = NULL;
 
 		switch (style)
@@ -145,7 +160,7 @@ namespace simple_matrix
 	{
 		if (!sumMarker)
 		{
-			for (int row = 0; row < currentMtxSize; row++)
+			for (int row = 0; row < numberOfElements; row++)
 			{
 				sum += currentMtx[row];
 			}
