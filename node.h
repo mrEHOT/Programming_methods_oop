@@ -5,7 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include "matrix.h"
+
 using namespace std;
+
 namespace simple_matrix
 {
 	class node

@@ -2,6 +2,7 @@
 #include <fstream>
 #include "container.h"
 #include <regex>
+
 using namespace std;
 using namespace simple_matrix;
 
@@ -24,6 +25,7 @@ int main(int argc, char* argv[])
 	{
 		string content = "";
 		regex regular("^-?\\d+(,-?\\d+){0,}$");
+
 		while (!ifstCheck.eof())
 		{
 			string content = "";

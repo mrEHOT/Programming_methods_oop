@@ -1,4 +1,5 @@
 #include "squareMtx.h"
+
 namespace simple_matrix
 {
 	bool squareMtx::Input(ifstream& ifst)
@@ -19,7 +20,7 @@ namespace simple_matrix
 		}
 		if (col != 0)
 		{
-			cout << "Input Error!  Side size must be one digit!" << endl;
+			cout << "Input Square matrix error! Side size must be one digit!" << endl;
 			return false;
 		}
 		else
@@ -31,7 +32,7 @@ namespace simple_matrix
 
 		if ((sideSize <= 1) || (sideSize > 10))
 		{
-			cout << "Incorrect Square matrix size!Re-enter the side size!Recommended size : 2 to 10." << endl;
+			cout << "Incorrect Square matrix size! Re-enter the side size! Recommended size : 2 to 10." << endl;
 			return false;
 		}
 		else
@@ -64,7 +65,7 @@ namespace simple_matrix
 						string str = to_string(currentMtx[row][col]);
 						if (part != str)
 						{
-							cout << "Cast error, number cannot be cast to int!" << endl;
+							cout << "Square matrix cast error, number cannot be cast to int!" << endl;
 							ClearMtx();
 							return false;
 						}
@@ -79,7 +80,7 @@ namespace simple_matrix
 				else
 				{
 					ClearMtx();
-					cout << "Input Error! The number of items does not match the side size that was received!" << endl;
+					cout << "Input Square matrix error! The number of items does not match the side size that was received!" << endl;
 					return false;
 				}
 			}
@@ -137,7 +138,6 @@ namespace simple_matrix
 
 	void squareMtx::FilteredMtxOut(ofstream& ofst)
 	{
-
 		Output(ofst);
 	}
 

@@ -2,6 +2,7 @@
 #include "squareMtx.h"
 #include "diagonalMtx.h"
 #include "triangularMtx.h"
+
 namespace simple_matrix
 {
 	matrix* matrix::MtxInput(ifstream& ifst)
@@ -70,13 +71,21 @@ namespace simple_matrix
 			return NULL;
 		}
 
-		if (newMtx->Input(ifst))
+		if ((newMtx->style == LINEBYLINE) || (newMtx->style == BYCOLUMNS) || (newMtx->style == ONEDIMENARR))
 		{
-			return newMtx;
+			if (newMtx->Input(ifst))
+			{
+				return newMtx;
+			}
+			else
+			{
+				cout << "Matrix input error!" << endl;
+				return NULL;
+			}
 		}
 		else
 		{
-			cout << "Matrix input error!" << endl;
+			cout << "Input Error! Unknown matrix output type!" << endl;
 			return NULL;
 		}
 	}

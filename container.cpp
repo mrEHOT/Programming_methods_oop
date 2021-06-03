@@ -1,4 +1,5 @@
 #include "container.h"
+
 namespace simple_matrix
 {
 	bool container::Input(ifstream& ifst)
@@ -58,6 +59,7 @@ namespace simple_matrix
 		ofst << "--------------------------------" << endl;
 		ofst << "Filtered Output - Square matrix:" << endl;
 		ofst << "--------------------------------" << endl << endl;
+
 		for (int i = 0; i < size; i++)
 		{
 			currNode = head;

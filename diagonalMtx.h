@@ -5,13 +5,16 @@
 #include <iostream>
 #include <fstream>
 #include "matrix.h"
+
 using namespace std;
+
 namespace simple_matrix
 {
 	class diagonalMtx : public matrix
 	{
 	public:
 		int* currentMtx;
+
 		int MtxSum();
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);

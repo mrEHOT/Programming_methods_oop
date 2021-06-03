@@ -4,7 +4,9 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+
 using namespace std;
+
 namespace simple_matrix
 {
 	class matrix
@@ -24,7 +26,6 @@ namespace simple_matrix
 		virtual void Output(ofstream& ofst) = 0;
 		virtual int MtxSum() = 0;
 		~matrix() {};
-
 	};
 } // end namespace simple_matrix
 #endif // !matrix_definition

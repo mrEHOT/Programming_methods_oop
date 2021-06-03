@@ -1,4 +1,5 @@
 #include "diagonalMtx.h"
+
 namespace simple_matrix
 {
 	bool diagonalMtx::Input(ifstream& ifst)
@@ -21,7 +22,7 @@ namespace simple_matrix
 
 		if ((sideSize <= 1) || (sideSize > 10))
 		{
-			cout << "Incorrect matrix size! Re-enter items! Recommended amount: 2 to 10." << endl;
+			cout << "Incorrect diagonal matrix size! Re-enter items! Recommended amount: 2 to 10." << endl;
 			return false;
 		}
 		else
@@ -36,7 +37,7 @@ namespace simple_matrix
 				string str = to_string(currentMtx[col]);
 				if (part != str)
 				{
-					cout << "Cast error, number cannot be cast to int!" << endl;
+					cout << "Diagonal matrix cast error, number cannot be cast to int!" << endl;
 					ClearMtx();
 					return false;
 				}

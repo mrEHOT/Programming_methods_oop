@@ -27,7 +27,7 @@ namespace simple_matrix
 		{
 			if ((numberOfElements <= 1) || (numberOfElements > 55))
 			{
-				cout << "Incorrect number of elements! Re-enter items! Recommended amount: 2 to 55." << endl;
+				cout << "Incorrect number of elements in triangular matrix! Re-enter items! Recommended amount: 2 to 55." << endl;
 				return false;
 			}
 			else
@@ -41,7 +41,7 @@ namespace simple_matrix
 					string str = to_string(currentMtx[col]);
 					if (part != str)
 					{
-						cout << "Cast error, number cannot be cast to int!" << endl;
+						cout << "Trinagular matrix cast error, number cannot be cast to int!" << endl;
 						ClearMtx();
 						return false;
 					}
@@ -56,7 +56,7 @@ namespace simple_matrix
 		}
 		else
 		{
-			cout << "Input Error! The entered elements are not enough to enter the lower triangular matrix!" << endl;
+			cout << "Triangular matrix input error! The entered elements are not enough to enter the lower triangular matrix!" << endl;
 			return false;
 		}
 	}

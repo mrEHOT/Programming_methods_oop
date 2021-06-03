@@ -5,7 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include "node.h"
+
 using namespace std;
+
 namespace simple_matrix
 {
 	class container
@@ -13,12 +15,12 @@ namespace simple_matrix
 	public:
 		long size;
 		node* head;
+
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void FilteredOutput(ofstream& ofst);
 		void Clear();
 		void Sort();
-
 		container();
 		~container() { Clear(); };
 	};
