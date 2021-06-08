@@ -24,6 +24,9 @@ namespace simple_matrix
 		virtual bool Input(ifstream& ifst) = 0;
 		virtual void FilteredMtxOut(ofstream& ofst) {};
 		virtual void Output(ofstream& ofst) = 0;
+		virtual void MMMatrix(matrix* other, ofstream& ofst) = 0;
+		virtual void MMSquare(ofstream& ofst) = 0;
+		virtual void MMDiagonal(ofstream& ofst) = 0;
 		virtual int MtxSum() = 0;
 		~matrix() {};
 	};

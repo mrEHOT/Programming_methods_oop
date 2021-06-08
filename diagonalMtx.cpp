@@ -110,6 +110,21 @@ namespace simple_matrix
 		ofst << endl;
 	}
 
+	void diagonalMtx::MMMatrix(matrix* other, ofstream& ofst)
+	{
+		other->MMDiagonal(ofst);
+	}
+
+	void diagonalMtx::MMSquare(ofstream& ofst)
+	{
+		ofst << "Square Matrix and Diagonal Matrix" << endl;
+	}
+
+	void diagonalMtx::MMDiagonal(ofstream& ofst)
+	{
+		ofst << "Diagonal Matrix and Diagonal Matrix" << endl;
+	}
+
 	void diagonalMtx::ClearMtx()
 	{
 		delete[] currentMtx;

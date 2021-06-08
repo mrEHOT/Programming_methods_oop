@@ -53,12 +53,11 @@ int main(int argc, char* argv[])
 
 	if (cont.Input(ifst))
 	{
-		cont.Sort();
 		cout << "Filled container. " << endl;
 		cont.Output(ofst); // Вывод заполненного контейнера
 
-		cout << "Output of square matrix." << endl;
-		cont.FilteredOutput(ofst); // Процедура, реализующая выборочный вывод информации (только о первом виде объетов - стандартные квадратные матрицы)
+		cout << "Calling multimethod." << endl;
+		cont.MultiMethod(ofst);
 
 		cont.Clear(); //Очистка контейнера
 		cout << "Empty container. " << endl;

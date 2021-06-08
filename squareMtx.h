@@ -19,6 +19,9 @@ namespace simple_matrix
 		bool Input(ifstream& ifst);
 		void FilteredMtxOut(ofstream& ofst);
 		void Output(ofstream& ofst);
+		void MMMatrix(matrix* other, ofstream& ofst);
+		void MMSquare(ofstream& ofst);
+		void MMDiagonal(ofstream& ofst);
 		void ClearMtx();
 		squareMtx();
 		squareMtx(int style);

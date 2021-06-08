@@ -58,6 +58,11 @@ namespace simple_matrix
 		mtx->FilteredMtxOut(ofst);
 	}
 
+	void node::MMNode(node* firstNode, node* secondNode, ofstream& ofst)
+	{
+		firstNode->mtx->MMMatrix(secondNode->mtx, ofst);
+	}
+
 	void node::NodeRemove()
 	{
 		mtx->ClearMtx();

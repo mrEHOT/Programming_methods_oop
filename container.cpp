@@ -71,6 +71,27 @@ namespace simple_matrix
 		}
 	}
 
+	void container::MultiMethod(ofstream& ofst)
+	{
+		node* firstNode;
+		node* secondNode;
+
+		ofst << "Multimethod." << endl;
+		for (int i = 0; i < size - 1; i++)
+		{
+			firstNode = head;
+			for (int j = 0; j < i; j++)
+			{
+				firstNode = firstNode->next;
+			}
+			secondNode = firstNode->next;
+
+			firstNode->MMNode(firstNode, secondNode, ofst);
+			firstNode->NodeOutput(ofst);
+			secondNode->NodeOutput(ofst);
+		}
+	}
+
 	void container::Clear()
 	{
 		if (head != NULL)

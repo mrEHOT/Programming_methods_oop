@@ -141,6 +141,21 @@ namespace simple_matrix
 		Output(ofst);
 	}
 
+	void squareMtx::MMMatrix(matrix* other, ofstream& ofst)
+	{
+		other->MMSquare(ofst);
+	}
+
+	void squareMtx::MMSquare(ofstream& ofst)
+	{
+		ofst << "Square Matrix and Square Matrix" << endl;
+	}
+
+	void squareMtx::MMDiagonal(ofstream& ofst)
+	{
+		ofst << "Diagonal Matrix and Square Matrix" << endl;
+	}
+
 	void squareMtx::ClearMtx()
 	{
 		for (int row = 0; row < sideSize; row++)

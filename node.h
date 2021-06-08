@@ -23,6 +23,7 @@ namespace simple_matrix
 		bool NodeAdd(ifstream& ifst);
 		void NodeOutput(ofstream& ofst);
 		void FilteredNodeOutput(ofstream& ofst);
+		void MMNode(node* firstNode, node* secondNode, ofstream& ofst);
 		void NodeRemove();
 		~node() {};
 	};

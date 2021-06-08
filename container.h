@@ -19,6 +19,7 @@ namespace simple_matrix
 		bool Input(ifstream& ifst);
 		void Output(ofstream& ofst);
 		void FilteredOutput(ofstream& ofst);
+		void MultiMethod(ofstream& ofst);
 		void Clear();
 		void Sort();
 		container();
