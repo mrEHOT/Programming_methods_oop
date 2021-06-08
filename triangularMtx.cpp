@@ -123,6 +123,26 @@ namespace simple_matrix
 		ofst << endl;
 	}
 
+	void triangularMtx::MMMatrix(matrix* other, ofstream& ofst)
+	{
+		other->MMTriangular(ofst);
+	}
+
+	void triangularMtx::MMSquare(ofstream& ofst)
+	{
+		ofst << "Square Matrix and Triangular Matrix" << endl << endl;
+	}
+
+	void triangularMtx::MMDiagonal(ofstream& ofst)
+	{
+		ofst << "Diagonal Matrix and Triangular Matrix" << endl << endl;
+	}
+
+	void triangularMtx::MMTriangular(ofstream& ofst)
+	{
+		ofst << "Triangular Matrix and Triangular Matrix" << endl << endl;
+	}
+
 	void triangularMtx::ClearMtx()
 	{
 		delete[] currentMtx;

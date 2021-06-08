@@ -22,6 +22,7 @@ namespace simple_matrix
 		void MMMatrix(matrix* other, ofstream& ofst);
 		void MMSquare(ofstream& ofst);
 		void MMDiagonal(ofstream& ofst);
+		void MMTriangular(ofstream& ofst);
 		void ClearMtx();
 		squareMtx();
 		squareMtx(int style);

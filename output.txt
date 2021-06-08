@@ -1,4 +1,4 @@
-Container contains 2 elements.
+Container contains 3 elements.
 It is Diagonal matrix. Matrix side size: 6. The sum of the elements of the matrix: 140
 Matrix output style - "Output by columns" 
 1	0	0	0	0	0	
@@ -7,6 +7,11 @@ Matrix output style - "Output by columns"
 0	0	0	2	0	0	
 0	0	0	0	100	0	
 0	0	0	0	0	20	
+
+It is Triangular matrix. Matrix side size: 2. The sum of the elements of the matrix: 912
+Matrix output style - "Line by line" 
+1	0	
+1010	-99	
 
 It is Square matrix. Matrix side size: 3. The sum of the elements of the matrix: 133
 Matrix output style - "Line by line" 
@@ -15,7 +20,9 @@ Matrix output style - "Line by line"
 5	9	-2	
 
 Multimethod.
-Diagonal Matrix and Square Matrix
+
+Diagonal Matrix and Triangular Matrix
+
 It is Diagonal matrix. Matrix side size: 6. The sum of the elements of the matrix: 140
 Matrix output style - "Output by columns" 
 1	0	0	0	0	0	
@@ -24,6 +31,18 @@ Matrix output style - "Output by columns"
 0	0	0	2	0	0	
 0	0	0	0	100	0	
 0	0	0	0	0	20	
+
+It is Triangular matrix. Matrix side size: 2. The sum of the elements of the matrix: 912
+Matrix output style - "Line by line" 
+1	0	
+1010	-99	
+
+Triangular Matrix and Square Matrix
+
+It is Triangular matrix. Matrix side size: 2. The sum of the elements of the matrix: 912
+Matrix output style - "Line by line" 
+1	0	
+1010	-99	
 
 It is Square matrix. Matrix side size: 3. The sum of the elements of the matrix: 133
 Matrix output style - "Line by line" 

@@ -117,12 +117,17 @@ namespace simple_matrix
 
 	void diagonalMtx::MMSquare(ofstream& ofst)
 	{
-		ofst << "Square Matrix and Diagonal Matrix" << endl;
+		ofst << "Square Matrix and Diagonal Matrix" << endl << endl;
 	}
 
 	void diagonalMtx::MMDiagonal(ofstream& ofst)
 	{
-		ofst << "Diagonal Matrix and Diagonal Matrix" << endl;
+		ofst << "Diagonal Matrix and Diagonal Matrix" << endl << endl;
+	}
+
+	void diagonalMtx::MMTriangular(ofstream& ofst)
+	{
+		ofst << "Triangular Matrix and Diagonal Matrix" << endl << endl;
 	}
 
 	void diagonalMtx::ClearMtx()

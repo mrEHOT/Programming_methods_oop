@@ -27,6 +27,7 @@ namespace simple_matrix
 		virtual void MMMatrix(matrix* other, ofstream& ofst) = 0;
 		virtual void MMSquare(ofstream& ofst) = 0;
 		virtual void MMDiagonal(ofstream& ofst) = 0;
+		virtual void MMTriangular(ofstream& ofst) = 0;
 		virtual int MtxSum() = 0;
 		~matrix() {};
 	};
