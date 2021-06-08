@@ -76,7 +76,7 @@ namespace simple_matrix
 		node* firstNode;
 		node* secondNode;
 
-		ofst << "Multimethod." << endl;
+		ofst << "Multimethod." << endl << endl;
 		for (int i = 0; i < size - 1; i++)
 		{
 			firstNode = head;
